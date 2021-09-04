@@ -12,10 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LerCSV {
+
     List<Game> listGames = null;
 
     public List<Game> lerGames(Path path){
+
         try{
+
             Reader reader = Files.newBufferedReader(path);
             CsvToBean<Game> csv = new CsvToBeanBuilder(reader)
                     .withType(Game.class)
@@ -23,6 +26,7 @@ public class LerCSV {
                     .build();
             listGames = csv.parse();
         }catch (IOException e){
+
             e.printStackTrace();
         }
         return listGames;

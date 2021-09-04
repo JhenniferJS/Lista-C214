@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Game {
+
     private int rank;
     private String name;
     private String platform;
