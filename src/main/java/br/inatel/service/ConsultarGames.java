@@ -7,17 +7,17 @@ import java.util.stream.Collectors;
 
 public class ConsultarGames {
 
-    public List<Game> buscarPorPlataform(List<Game> games, String plataform){
+    public List<Game> buscarPorPlataform(List<Game> games, String plataform) {
 
         return games.stream()
-                .filter(g -> g.getPlatform().equals(plataform))
+                .filter(g -> g.getPlatform().equalsIgnoreCase(plataform))
                 .collect(Collectors.toList());
     }
 
-    public List<Game> buscarPorPublisher(List<Game> games, String publisher){
+    public List<Game> buscarPorPublisher(List<Game> games, String publisher) {
 
         return games.stream()
-                .filter(g -> g.getPublisher().equals(publisher))
+                .filter(g -> g.getPublisher().equalsIgnoreCase(publisher))
                 .collect(Collectors.toList());
     }
 }

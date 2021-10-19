@@ -8,16 +8,15 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 public class LerCSV {
 
     List<Game> listGames = null;
 
-    public List<Game> lerGames(Path path){
+    public List<Game> lerGames(Path path) {
 
-        try{
+        try {
 
             Reader reader = Files.newBufferedReader(path);
             CsvToBean<Game> csv = new CsvToBeanBuilder(reader)
@@ -25,7 +24,7 @@ public class LerCSV {
                     .withIgnoreLeadingWhiteSpace(true)
                     .build();
             listGames = csv.parse();
-        }catch (IOException e){
+        } catch (IOException e) {
 
             e.printStackTrace();
         }

@@ -11,9 +11,11 @@ import java.util.List;
 public class LerCSVTest {
 
     @Test
-    public void TestLerCSV(){
+    public void TestLerCSV() {
+
+        String path = "src/main/resources/vendas-games.csv";
         LerCSV csv = new LerCSV();
-        List<Game> listGames = csv.lerGames(Paths.get("src/main/resources/vendas-games.csv"));
+        List<Game> listGames = csv.lerGames(Paths.get(path));
         Assert.assertNotNull(listGames);
     }
 }
