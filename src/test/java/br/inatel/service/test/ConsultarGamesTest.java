@@ -15,14 +15,14 @@ import java.util.List;
 
 public class ConsultarGamesTest {
 
-    private static String path = "src/main/resources/vendas-games.csv";
+    private static final String PATH = "src/main/resources/vendas-games.csv";
     private static List<Game> csvGames;
     private ConsultarGames games;
 
     @BeforeClass
     public static void initCsv() {
 
-        csvGames = new LerCSV().lerGames(Paths.get(path));
+        csvGames = new LerCSV().lerGames(Paths.get(PATH));
     }
 
     @Before
